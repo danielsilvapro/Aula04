@@ -8,6 +8,37 @@ public class Estoque {
 	int quantidadeMinima = 5;
 	int quantidadeAtual = 30;
 
+	public Estoque(String nome, int quantidadeMinima, int quantidadeAtual) {
+		super();
+		this.nome = nome;
+		this.quantidadeMinima = quantidadeMinima;
+		this.quantidadeAtual = quantidadeAtual;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public int getQuantidadeMinima() {
+		return quantidadeMinima;
+	}
+
+	public void setQuantidadeMinima(int quantidadeMinima) {
+		this.quantidadeMinima = quantidadeMinima;
+	}
+
+	public int getQuantidadeAtual() {
+		return quantidadeAtual;
+	}
+
+	public void setQuantidadeAtual(int quantidadeAtual) {
+		this.quantidadeAtual = quantidadeAtual;
+	}
+
 	public void mudarNome(String nome) {
 
 		Scanner entrada = new Scanner(System.in);
@@ -25,9 +56,7 @@ public class Estoque {
 
 	}
 
-	public void repor() {
-
-		int reposicao = 0;
+	public void repor(int reposicao) {
 
 		Scanner entrada = new Scanner(System.in);
 		System.out.println("Digite seu estoque reserva");
@@ -35,14 +64,13 @@ public class Estoque {
 		quantidadeAtual += reposicao;
 	}
 
-	public void darBaixa() {
+	public void darBaixa(int darBaixa) {
 
-		int darBaixa = 0;
 		Scanner entrada = new Scanner(System.in);
 		System.out.println("Digite a quantidade para dar baixa no seu estoque");
 		darBaixa = entrada.nextInt();
-		if (quantidadeMinima >= quantidadeAtual){
-			quantidadeAtual -= darBaixa;	
+		if (quantidadeMinima >= quantidadeAtual) {
+			quantidadeAtual -= darBaixa;
 		}
 	}
 
